@@ -1,0 +1,49 @@
+name: Build and Test .NET App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: tictactoe
+        ports: [ "5432:5432" ]
+        options: >-
+          --health-cmd="pg_isready"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      ConnectionStrings__DefaultConnection: Host=localhost;Port=5432;Database=tictactoe;Username=postgres;Password=postgres
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET 8 SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore "Tic Tac Toe/Tic Tac Toe.csproj"
+
+    - name: Build
+      run: dotnet build "Tic Tac Toe/Tic Tac Toe.csproj" --no-restore --configuration Release
+
+    - name: Apply EF Core migrations
+      run: dotnet ef database update --project "Tic Tac Toe/Tic Tac Toe.csproj" --startup-project "Tic Tac Toe"
+
+    - name: Run Tests
+      run: dotnet test --no-build --verbosity normal

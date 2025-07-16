@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Tic Tac Toe/Dockerfile
+      target: final
+    ports:
+      - "8080:8080"
+    environment:
+      - Game__BoardSize=3
+      - Game__WinConditionLength=3
+      - ConnectionStrings__DefaultConnection=Host=db;Database=tictactoe;Username=postgres;Password=postgres
+      - Jwt__Key=YXZpczItbmljZS1sb25nLXNlY3JldC1qd3Qta2V5IQ==
+      - Jwt__Issuer=TicTacToeApp
+      - Jwt__Audience=TicTacToeUsers
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - db
+    restart: on-failure
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    entrypoint: ["/app/entrypoint.sh"]
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=tictactoe
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

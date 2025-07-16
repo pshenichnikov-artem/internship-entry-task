@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tic Tac Toe", "Tic Tac Toe.csproj", "{E6BEB4C7-9D53-478F-AEB4-8E6D02CE579B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "..\Core\Core.csproj", "{A2FD175A-4EB6-4663-8721-DE1B66C854E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{15652D91-00ED-48B0-B520-C7282E2E3639}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FE6FD58B-BCFC-492E-89B3-EDE116F69948}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E6B86EBE-DF76-4372-B8ED-2F222B21ECD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesTests", "..\ServicesTests\ServicesTests.csproj", "{F81D3ED9-0D5B-4F92-A989-04D12FA943CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{3FAE8B90-AAA0-4EC1-9388-8F7B44B01D50}"
+	ProjectSection(SolutionItems) = preProject
+		..\docker-compose.yml = ..\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "..\IntegrationTests\IntegrationTests.csproj", "{B1D5F069-26EC-4AA6-9587-8A94797DE344}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6BEB4C7-9D53-478F-AEB4-8E6D02CE579B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6BEB4C7-9D53-478F-AEB4-8E6D02CE579B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6BEB4C7-9D53-478F-AEB4-8E6D02CE579B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6BEB4C7-9D53-478F-AEB4-8E6D02CE579B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FD175A-4EB6-4663-8721-DE1B66C854E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FD175A-4EB6-4663-8721-DE1B66C854E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FD175A-4EB6-4663-8721-DE1B66C854E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FD175A-4EB6-4663-8721-DE1B66C854E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15652D91-00ED-48B0-B520-C7282E2E3639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15652D91-00ED-48B0-B520-C7282E2E3639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15652D91-00ED-48B0-B520-C7282E2E3639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15652D91-00ED-48B0-B520-C7282E2E3639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F81D3ED9-0D5B-4F92-A989-04D12FA943CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81D3ED9-0D5B-4F92-A989-04D12FA943CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81D3ED9-0D5B-4F92-A989-04D12FA943CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81D3ED9-0D5B-4F92-A989-04D12FA943CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1D5F069-26EC-4AA6-9587-8A94797DE344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D5F069-26EC-4AA6-9587-8A94797DE344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D5F069-26EC-4AA6-9587-8A94797DE344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D5F069-26EC-4AA6-9587-8A94797DE344}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6BEB4C7-9D53-478F-AEB4-8E6D02CE579B} = {FE6FD58B-BCFC-492E-89B3-EDE116F69948}
+		{A2FD175A-4EB6-4663-8721-DE1B66C854E5} = {FE6FD58B-BCFC-492E-89B3-EDE116F69948}
+		{15652D91-00ED-48B0-B520-C7282E2E3639} = {FE6FD58B-BCFC-492E-89B3-EDE116F69948}
+		{F81D3ED9-0D5B-4F92-A989-04D12FA943CC} = {E6B86EBE-DF76-4372-B8ED-2F222B21ECD8}
+		{B1D5F069-26EC-4AA6-9587-8A94797DE344} = {E6B86EBE-DF76-4372-B8ED-2F222B21ECD8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC23518E-F289-4DB7-91E3-8E09EF1A42A3}
+	EndGlobalSection
+EndGlobal
